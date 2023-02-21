@@ -4,7 +4,7 @@
   "description": "## My first commit",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "node-pg-migrate",
     "start": "node server.js"
   },
   "repository": {
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Salim255/JOB-FINDER#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "node-pg-migrate": "^6.2.2",
+    "pg": "^8.9.0"
   }
 }
