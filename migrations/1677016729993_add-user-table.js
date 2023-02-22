@@ -14,7 +14,7 @@ exports.up = (pgm) => {
 };
 
 console.log("====================================");
-console.log("Create users tabel!");
+console.log("Created users tabel!");
 console.log("====================================");
 //pool.query("SELECT 1 +1 ;").then((res) => console.log(res));
 exports.down = (pgm) => {

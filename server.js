@@ -3,12 +3,18 @@ const express = require("express");
 const pg = require("pg");
 
 //We use pool to run a query
-const pool = new pg.Pool({
+/* const pool = new pg.Pool({
   host: "localhost",
   port: 4321,
   database: "postgres",
   user: "postgres",
   password: "123456",
+}) */
+const pool = new pg.Pool({
+  host: "db",
+  database: "postgres",
+  user: "postgres", //The same username
+  password: "123456", //
 });
 
 //To test if the connection is stablished
@@ -18,6 +24,10 @@ const app = express();
 //I'm going to wire up one middleware to use with the express application that is going to allow us to
 //receive form submissions from a browser
 app.use(express.urlencoded({ extended: true }));
+
+app.get("/", async (req, res) => {
+  res.send("Hell world");
+});
 
 app.get("/posts", async (req, res) => {
   const { rows } = await pool.query(`
