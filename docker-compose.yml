@@ -9,8 +9,11 @@ services:
       - DATABASE_URL=postgres://docker:123456@db:5432/docker
   db:
     image: "postgres"
-    ports:
-      - "4321:5432"
     environment:
       POSTGRES_PASSWORD: "123456"
       POSTGRES_USER: "docker"
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:

@@ -82,8 +82,8 @@ app.post("/posts", async (req, res) => {
 
   res.redirect("/posts");
 });
-app.listen(3005, () => {
+app.listen(5004, () => {
   console.log("====================================");
-  console.log("Listening on  port 3005");
+  console.log("Listening on  port 5004");
   console.log("====================================");
 });
